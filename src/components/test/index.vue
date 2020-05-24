@@ -16,6 +16,8 @@
         debugger;
         console.log('点击子组件的div')
         this.$emit('print')
+      },
+      getTypeForComponent() {
       }
     }
   }

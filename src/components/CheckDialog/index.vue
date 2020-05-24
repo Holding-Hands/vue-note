@@ -4,7 +4,9 @@
       <div class="title-slot">
         <slot name="title">{{title}}</slot>
         <div @click="onClickShowCheckDialog" class="icon">
-          <slot name="icon"><i class="iconfont icontianjiaguzhang"/></slot>
+          <slot name="icon">
+            <i class="iconfont icontianjiaguzhang"/>
+          </slot>
         </div>
       </div>
     </div>

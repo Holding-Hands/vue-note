@@ -18,11 +18,20 @@
     <!--        <div>父组件的内容b</div>-->
     <!--      </slot>-->
     <!--    </CheckDialog>-->
-    <!--    <SlotTest >-->
-    <!--      <template #default="father">-->
-    <!--        <slot>{{father.user.name}}</slot>-->
-    <!--      </template>-->
-    <!--    </SlotTest>-->
+        <SlotTest >
+          <template>
+            aaaa
+          </template>
+          <template v-slot:footer>
+<!--            qqqqqqqq-->
+            <slot>qqqqqq</slot>
+<!--            <slot>{{user.name}}</slot>-->
+<!--            <slot slot="footer">父组件内容1&#45;&#45;footer</slot>-->
+<!--            <slot slot="footer">父组件内容2&#45;&#45;footer</slot>-->
+<!--            <slot>父组件内容2</slot>-->
+<!--            <slot>父组件内容3</slot>-->
+          </template>
+        </SlotTest>
     <!--    <message />-->
     <!--    <Filter />-->
     <!--    <div class="father">-->
@@ -73,12 +82,12 @@
   import transitions from './components/transition'
   import Flv from "./flv/Flv";
   import message from './components/message/index'
-  import SlotTest from "./views/SlotTest";
+  // import SlotTest from "./views/SlotTest";
   import Table from "./views/Table";
   import Table1 from "./views/Table1";
   import TipDialog from "./components/TipDialog/TipDialog";
   import CheckDialog from './components/CheckDialog'
-  // import SlotTest from "./components/slot/SlotTest";
+  import SlotTest from "./components/slot/SlotTest";
   import Menu from './components/menu'
   import slide from './components/slide'
   import FlightsCardList from './components/FlightsCardList'
@@ -86,6 +95,7 @@
   import lodash from './components/lodash'
   import Vue from "vue";
   import test from './components/test'
+
 
   export default {
     components: {
@@ -96,7 +106,7 @@
       // SlotTest
       // Filter,
       // message,
-      // SlotTest
+      SlotTest,
       // FlightsCardList
       // Flv,
       // Menu,
@@ -166,7 +176,7 @@
       ))
     },
     mounted() {
-
+      console.log(this.$router, this.$route)
     },
     methods: {
       fCancel(e) {
