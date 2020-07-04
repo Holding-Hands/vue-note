@@ -9,7 +9,6 @@
     <!--      title="父组件的标题"-->
     <!--      content="父组件的内容"-->
     <!--    />-->
-
     <!--    <CheckDialog :isShowCheckDialog.sync="toggle" :f-confirm="fCancel">-->
     <!--      <Slot slot="title">-->
     <!--        <p>父组件的标题b</p>-->
@@ -20,7 +19,7 @@
     <!--    </CheckDialog>-->
         <SlotTest >
           <template>
-            aaaa
+            aa
           </template>
           <template v-slot:footer>
 <!--            qqqqqqqq-->
