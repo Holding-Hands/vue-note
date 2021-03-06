@@ -54,8 +54,11 @@ module.exports = {
         target: 'http://avms.hx-test.tao.qdcares'
       },
       '/api': {
-        target: 'http://172.16.1.58:8080',
+        target: 'http://192.168.163.93:9200',
         logLevel: 'debug',
+        pathRewrite: {
+          '/api': ''
+        },
         changeOrigin: true
       }
     }
