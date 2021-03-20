@@ -6,7 +6,7 @@ import store from './store'
 import api from './api'
 
 Vue.prototype.$api = api
-
+console.log(App)
 import flvjs from 'flv.js'
 Vue.use(flvjs)
 Vue.config.productionTip = false
