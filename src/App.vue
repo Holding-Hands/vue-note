@@ -1,13 +1,5 @@
 <template>
   <div id="main">
-    <!--    <CheckDialog :isShowCheckDialog.sync="toggle" :f-confirm="fCancel">-->
-    <!--      <Slot slot="title">-->
-    <!--        <p>父组件的标题b</p>-->
-    <!--      </slot>-->
-    <!--      <slot slot="content">-->
-    <!--        <div>父组件的内容b</div>-->
-    <!--      </slot>-->
-    <!--    </CheckDialog>-->
 
     <!--    <message />-->
 
@@ -67,7 +59,6 @@
 <script>
 import transitions from './components/transition'
 import message from './components/message/index'
-import CheckDialog from './components/CheckDialog'
 import Menu from './components/menu'
 import slide from './components/Slide'
 import Filter from './components/FilterDialog/index'
@@ -79,7 +70,6 @@ import zindex from "./components/ZIndex/zindex";
 
 export default {
   components: {
-    // CheckDialog,
     // Filter,
     // message,
     // Menu,
