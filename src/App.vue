@@ -3,8 +3,6 @@
 
     <!--    <message />-->
 
-    <!--    <Filter />-->
-
     <!--    <div class="father">-->
     <!--      <div class="child"></div>-->
     <!--    </div>-->
@@ -61,7 +59,6 @@ import transitions from './components/transition'
 import message from './components/message/index'
 import Menu from './components/menu'
 import slide from './components/Slide'
-import Filter from './components/FilterDialog/index'
 import lodash from './components/lodash'
 import Vue from "vue";
 import test from './components/test'
@@ -70,7 +67,6 @@ import zindex from "./components/ZIndex/zindex";
 
 export default {
   components: {
-    // Filter,
     // message,
     // Menu,
     // slide,
