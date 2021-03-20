@@ -1,6 +1,5 @@
 <template>
   <div id="main">
-
     <!--    <message />-->
 
     <!--    <div class="father">-->
@@ -9,26 +8,18 @@
 
     <!--    <button @click="isShowDialog">点击开启弹框</button>-->
 
-    <!--    <video ></video>-->
-    <!--    <video src="http://192.168.163.220/live?port=1935&app=avms-video&stream=test3" controls="controls">-->
-    <!--      您的浏览器不支持 video 标签。-->
-    <!--    </video>-->
-    <!--    <video id="example_video_1" class="video-js vjs-default-skin" controls width="100%" src="http://192.168.163.220/live?port=1935&app=avms-video&stream=test3"-->
-    <!--           data-setup="{}">-->
-    <!--    </video>-->
     <!--    <slide />-->
     <!--    <Menu />-->
 
     <!--    <lodash />-->
 
-    <!--    <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>-->
+        <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>
 
     <!--    <label>-->
     <!--      <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa"  ref="focus">-->
     <!--    </label>-->
 
     <!--    <button @click="toggle=!toggle">切换</button>-->
-    <!--    <div>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
 
     <!--    <transition>-->
     <!--      <div class="test" v-if="toggle">我是动画</div>-->
@@ -47,7 +38,7 @@
 
     <!--  组件点击事件要加native  -->
     <test @click.native="onClick"/>
-    <!--    <Video/>-->
+
     <!--    <zindex/>-->
 
     <router-view/>
@@ -60,9 +51,7 @@ import message from './components/message/index'
 import Menu from './components/menu'
 import slide from './components/Slide'
 import lodash from './components/lodash'
-import Vue from "vue";
 import test from './components/test'
-import Video from "./components/video/video";
 import zindex from "./components/ZIndex/zindex";
 
 export default {
@@ -73,43 +62,12 @@ export default {
     // lodash,
     // transitions,
     test,
-    // Video, // 视频注意项
     // zindex
   },
   data() {
     return {
-      cancel: '取消',
       toggle: false,
       name: 'message'
-    }
-  },
-  created() {
-    var arr = [1, 2, 3, 4, 5]
-    _.pull(arr, 1, 2, 3)
-
-    this.$api.apronTest.getApron().then(res => {
-      console.log(res)
-    })
-
-    /**
-     * 深层 扁平化数组
-     *  @param {Array} arr 要被“抹平”的数组
-     *  @param {String} key 子级数组的 key name
-     *
-     *  @eg:
-     *  deepFlattenArr(
-     *    [{
-     *        resourceName:'a',
-     *        resourceKey:'a',
-     *        children:[{resourceName:'c',resourceKey:'c',children:[]}]
-     *       }],
-     *    'children'
-     *  )
-     *  [{resourceName:'a',resourceKey:'a'}, {resourceName:'c',resourceKey:'c'}]
-     * {resourceName:'a',resourceKey:'a',children:[resourceName:'c',resourceKey:'c',children:[]]}
-     */
-    function deepFlattenArr(arr, key) {
-      return _.flatMapDeep(arr, d => (_.isEmpty(d[key]) ? d : deepFlattenArr(d[key], key)));
     }
   },
   methods: {
@@ -123,9 +81,11 @@ export default {
       this.$dialog({
         title: 'zcy',
         footerContent: '我是footerContent'
-      }).then(() => {
+      })
+        .then(() => {
         this.fConfirm();
-      }).catch(() => {
+      })
+        .catch(() => {
         this.fCancel();
       })
     },
@@ -133,6 +93,7 @@ export default {
       console.log(11)
     },
     onClick() {
+      this.$router.push('/Video')
       console.log('调用了父组件方法');
     }
   },
