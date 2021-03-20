@@ -52,7 +52,6 @@
     <!--           data-setup="{}">-->
     <!--    </video>-->
     <!--    <slide />-->
-    <!--    <Flv />-->
     <!--    <Menu />-->
     <!--    <lodash />-->
     <!--    <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>-->
@@ -86,7 +85,6 @@
 <script>
 import ReferenceDetail from './components/ReferenceDetails'
 import transitions from './components/transition'
-import Flv from "./flv/Flv";
 import message from './components/message/index'
 import Table from "./views/Table";
 import Table1 from "./views/Table1";
@@ -94,7 +92,7 @@ import TipDialog from "./components/TipDialog/TipDialog";
 import CheckDialog from './components/CheckDialog'
 import Slot from "./components/Slot/Slot";
 import Menu from './components/menu'
-import slide from './components/slide'
+import slide from './components/Slide'
 import FlightsCardList from './components/FlightsCardList'
 import Filter from './components/FilterDialog/index'
 import lodash from './components/lodash'
@@ -113,7 +111,6 @@ export default {
     // message,
     Slot,
     // FlightsCardList
-    // Flv,
     // Menu,
     // slide,
     // lodash,
