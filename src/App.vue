@@ -1,7 +1,5 @@
 <template>
   <div id="main">
-    <!--        <Table />-->
-    <!--        <Table1 />-->
     <!--    <TipDialog-->
     <!--      :f-cancel="fCancel"-->
     <!--      :f-confirm="fConfirm"-->
@@ -17,23 +15,26 @@
     <!--        <div>父组件的内容b</div>-->
     <!--      </slot>-->
     <!--    </CheckDialog>-->
-    <Slot>
-      <template>
-        我想替换第一个匿名插槽
-      </template>
-      <!--   v-slot:footer="scoped" 简写 #footer="scoped"  -->
-      <!--   如果想获取插槽里的内容可以这样写 同时写多个会覆盖       -->
-      <template v-slot:footer>默认插槽内容</template>
-      <template v-slot:footer="scoped">
-        <!--            qqqqqqqq-->{{ scoped.content }}
-        <!--            <slot>qqqqqq</slot>-->
-        <!--            <slot>{{user.name}}</slot>-->
-        <!--            <slot slot="footer">父组件内容1&#45;&#45;footer</slot>-->
-        <!--            <slot slot="footer">父组件内容2&#45;&#45;footer</slot>-->
-        <!--            <slot>父组件内容2</slot>-->
-        <!--            <slot>父组件内容3</slot>-->
-      </template>
-    </Slot>
+
+<!--    <Slot>-->
+<!--      <template>-->
+<!--        我想替换第一个匿名插槽-->
+<!--      </template>-->
+<!--      &lt;!&ndash;   v-slot:footer="scoped" 简写 #footer="scoped"  &ndash;&gt;-->
+<!--      &lt;!&ndash;   如果想获取插槽里的内容可以这样写 同时写多个会覆盖       &ndash;&gt;-->
+<!--      <template v-slot:footer>默认插槽内容</template>-->
+<!--      <template v-slot:footer="scoped">-->
+<!--        &lt;!&ndash;            qqqqqqqq&ndash;&gt;{{ scoped.content }}-->
+<!--        &lt;!&ndash;            <slot>qqqqqq</slot>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <slot>{{user.name}}</slot>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <slot slot="footer">父组件内容1&#45;&#45;footer</slot>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <slot slot="footer">父组件内容2&#45;&#45;footer</slot>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <slot>父组件内容2</slot>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <slot>父组件内容3</slot>&ndash;&gt;-->
+<!--      </template>-->
+<!--    </Slot>-->
+
+
     <!--    <message />-->
     <!--    <Filter />-->
     <!--    <div class="father">-->
@@ -73,8 +74,9 @@
     <!--        <component :is="name"></component>-->
     <!--      </transition>-->
     <!--    </div>-->
-    <!--    <ReferenceDetail />-->
-    <!--    <test @click.native="onClick"/>-->
+
+    <!--  组件点击事件要加native  -->
+        <test @click.native="onClick"/>
     <!--    <Video/>-->
     <!--    <zindex/>-->
 
@@ -83,11 +85,8 @@
 </template>
 
 <script>
-import ReferenceDetail from './components/ReferenceDetails'
 import transitions from './components/transition'
 import message from './components/message/index'
-import Table from "./views/Table";
-import Table1 from "./views/Table1";
 import TipDialog from "./components/TipDialog/TipDialog";
 import CheckDialog from './components/CheckDialog'
 import Slot from "./components/Slot/Slot";
@@ -103,20 +102,17 @@ import zindex from "./components/ZIndex/zindex";
 
 export default {
   components: {
-    // Table,
-    // Table1
     // TipDialog
     // CheckDialog,
     // Filter,
     // message,
-    Slot,
+    // Slot,
     // FlightsCardList
     // Menu,
     // slide,
     // lodash,
     // transitions,
-    // ReferenceDetail,
-    // test,
+    test,
     // Video, // 视频注意项
     // zindex
   },

@@ -8,7 +8,7 @@ import Flv from '../components/Flv'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/home' },
+  // { path: '/', redirect: '/home' },
   { path: '/home', name: 'Home', component: Home },
   { path: '/Slot', name: 'Slot', component: Slot }, // 插槽笔记
   { path: '/Accordion', name: 'Accordion', component: Accordion }, // 手风琴笔记

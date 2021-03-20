@@ -7,17 +7,13 @@
 
 <script>
   export default {
-    // name: "test",
     methods: {
       onClickButton() {
         console.log('点击子组件的button');
       },
       onClickDiv() {
-        debugger;
         console.log('点击子组件的div')
         this.$emit('print')
-      },
-      getTypeForComponent() {
       }
     }
   }
