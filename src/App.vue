@@ -1,12 +1,5 @@
 <template>
   <div id="main">
-    <!--    <TipDialog-->
-    <!--      :f-cancel="fCancel"-->
-    <!--      :f-confirm="fConfirm"-->
-    <!--      :isShowDialog.sync="toggle"-->
-    <!--      title="父组件的标题"-->
-    <!--      content="父组件的内容"-->
-    <!--    />-->
     <!--    <CheckDialog :isShowCheckDialog.sync="toggle" :f-confirm="fCancel">-->
     <!--      <Slot slot="title">-->
     <!--        <p>父组件的标题b</p>-->
@@ -41,7 +34,6 @@
     <!--      <div class="child"></div>-->
     <!--    </div>-->
     <!--    <button @click="isShowDialog">点击开启弹框</button>-->
-    <!--    <FlightsCardList />-->
     <!--    <Slot>-->
     <!--      <template>zcy</template>-->
     <!--    </Slot>-->
@@ -87,12 +79,10 @@
 <script>
 import transitions from './components/transition'
 import message from './components/message/index'
-import TipDialog from "./components/TipDialog/TipDialog";
 import CheckDialog from './components/CheckDialog'
 import Slot from "./components/Slot/Slot";
 import Menu from './components/menu'
 import slide from './components/Slide'
-import FlightsCardList from './components/FlightsCardList'
 import Filter from './components/FilterDialog/index'
 import lodash from './components/lodash'
 import Vue from "vue";
@@ -102,12 +92,10 @@ import zindex from "./components/ZIndex/zindex";
 
 export default {
   components: {
-    // TipDialog
     // CheckDialog,
     // Filter,
     // message,
     // Slot,
-    // FlightsCardList
     // Menu,
     // slide,
     // lodash,
@@ -137,35 +125,21 @@ export default {
      *
      *  @eg:
      *  deepFlattenArr(
-     *    [
-     *      {
+     *    [{
      *        resourceName:'a',
      *        resourceKey:'a',
-     *        children:[
-     *          {resourceName:'c',resourceKey:'c',children:[]}
-     *        ]
-     *       }
-     *    ],
+     *        children:[{resourceName:'c',resourceKey:'c',children:[]}]
+     *       }],
      *    'children'
      *  )
-     *
-     *  ->
-     *
      *  [{resourceName:'a',resourceKey:'a'}, {resourceName:'c',resourceKey:'c'}]
      * {resourceName:'a',resourceKey:'a',children:[resourceName:'c',resourceKey:'c',children:[]]}
      */
     function deepFlattenArr(arr, key) {
-      return _.flatMapDeep(arr, d => (_.isEmpty(d[key])
-        ? d
-        : deepFlattenArr(d[key], key)));
+      return _.flatMapDeep(arr, d => (_.isEmpty(d[key]) ? d : deepFlattenArr(d[key], key)));
     }
   },
   methods: {
-    fCancel(e) {
-      if (e.keyCodes === 65) {
-        console.log("cancel")
-      }
-    },
     fConfirm() {
       console.log('confirm')
     },
@@ -173,10 +147,8 @@ export default {
       console.log(1);
     },
     isShowDialog() {
-      // this.toggle = !this.toggle;
       this.$dialog({
         title: 'zcy',
-        // headerContent:'',
         footerContent: '我是footerContent'
       }).then(() => {
         this.fConfirm();
