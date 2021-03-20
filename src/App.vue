@@ -17,7 +17,7 @@
     <!--        <div>父组件的内容b</div>-->
     <!--      </slot>-->
     <!--    </CheckDialog>-->
-    <SlotTest>
+    <Slot>
       <template>
         我想替换第一个匿名插槽
       </template>
@@ -33,7 +33,7 @@
         <!--            <slot>父组件内容2</slot>-->
         <!--            <slot>父组件内容3</slot>-->
       </template>
-    </SlotTest>
+    </Slot>
     <!--    <message />-->
     <!--    <Filter />-->
     <!--    <div class="father">-->
@@ -41,9 +41,9 @@
     <!--    </div>-->
     <!--    <button @click="isShowDialog">点击开启弹框</button>-->
     <!--    <FlightsCardList />-->
-    <!--    <SlotTest>-->
+    <!--    <Slot>-->
     <!--      <template>zcy</template>-->
-    <!--    </SlotTest>-->
+    <!--    </Slot>-->
     <!--    <video ></video>-->
     <!--    <video src="http://192.168.163.220/live?port=1935&app=avms-video&stream=test3" controls="controls">-->
     <!--      您的浏览器不支持 video 标签。-->
@@ -76,15 +76,14 @@
     <!--    </div>-->
     <!--    <ReferenceDetail />-->
     <!--    <test @click.native="onClick"/>-->
-    <Accordion/>
     <!--    <Video/>-->
     <!--    <zindex/>-->
 
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Accordion from './components/Accordion/accordion'
 import ReferenceDetail from './components/ReferenceDetails'
 import transitions from './components/transition'
 import Flv from "./flv/Flv";
@@ -93,7 +92,7 @@ import Table from "./views/Table";
 import Table1 from "./views/Table1";
 import TipDialog from "./components/TipDialog/TipDialog";
 import CheckDialog from './components/CheckDialog'
-import SlotTest from "./components/slot/SlotTest";
+import Slot from "./components/Slot/Slot";
 import Menu from './components/menu'
 import slide from './components/slide'
 import FlightsCardList from './components/FlightsCardList'
@@ -110,10 +109,9 @@ export default {
     // Table1
     // TipDialog
     // CheckDialog,
-    // SlotTest
     // Filter,
     // message,
-    SlotTest,
+    Slot,
     // FlightsCardList
     // Flv,
     // Menu,
@@ -121,7 +119,6 @@ export default {
     // lodash,
     // transitions,
     // ReferenceDetail,
-    Accordion, // 手风琴相关
     // test,
     // Video, // 视频注意项
     // zindex

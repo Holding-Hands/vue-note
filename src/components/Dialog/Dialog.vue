@@ -11,9 +11,9 @@
         <slot name="content">{{content}}</slot>
       </div>
     </div>
-    <div class="footer" @click="onClickIsShowDialog">
-      <el-button type="small" class="cancel" @click="onHandle('reject')">返回</el-button>
-      <el-button type="small" class="confirm" @click="onHandle('resolve')">确定</el-button>
+    <div class="footer">
+      <el-button type="small" class="cancel" @click="onHandle('reject'), onClickIsShowDialog()">返回</el-button>
+      <el-button type="small" class="confirm" @click="onHandle('resolve'), onClickIsShowDialog()">确定</el-button>
     </div>
   </div>
 </template>

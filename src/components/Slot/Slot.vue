@@ -1,6 +1,6 @@
 <template>
   <div>
-<!--    <slot :user="user">{{user.name}}</slot>-->
+    <slot :user="user">{{user.name}}</slot>
     <div>
       <slot>子组件的内容</slot>
     </div>
