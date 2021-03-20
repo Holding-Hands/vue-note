@@ -9,34 +9,16 @@
     <!--      </slot>-->
     <!--    </CheckDialog>-->
 
-<!--    <Slot>-->
-<!--      <template>-->
-<!--        我想替换第一个匿名插槽-->
-<!--      </template>-->
-<!--      &lt;!&ndash;   v-slot:footer="scoped" 简写 #footer="scoped"  &ndash;&gt;-->
-<!--      &lt;!&ndash;   如果想获取插槽里的内容可以这样写 同时写多个会覆盖       &ndash;&gt;-->
-<!--      <template v-slot:footer>默认插槽内容</template>-->
-<!--      <template v-slot:footer="scoped">-->
-<!--        &lt;!&ndash;            qqqqqqqq&ndash;&gt;{{ scoped.content }}-->
-<!--        &lt;!&ndash;            <slot>qqqqqq</slot>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <slot>{{user.name}}</slot>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <slot slot="footer">父组件内容1&#45;&#45;footer</slot>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <slot slot="footer">父组件内容2&#45;&#45;footer</slot>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <slot>父组件内容2</slot>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <slot>父组件内容3</slot>&ndash;&gt;-->
-<!--      </template>-->
-<!--    </Slot>-->
-
-
     <!--    <message />-->
+
     <!--    <Filter />-->
+
     <!--    <div class="father">-->
     <!--      <div class="child"></div>-->
     <!--    </div>-->
+
     <!--    <button @click="isShowDialog">点击开启弹框</button>-->
-    <!--    <Slot>-->
-    <!--      <template>zcy</template>-->
-    <!--    </Slot>-->
+
     <!--    <video ></video>-->
     <!--    <video src="http://192.168.163.220/live?port=1935&app=avms-video&stream=test3" controls="controls">-->
     <!--      您的浏览器不支持 video 标签。-->
@@ -46,16 +28,22 @@
     <!--    </video>-->
     <!--    <slide />-->
     <!--    <Menu />-->
+
     <!--    <lodash />-->
+
     <!--    <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>-->
+
     <!--    <label>-->
     <!--      <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa"  ref="focus">-->
     <!--    </label>-->
+
     <!--    <button @click="toggle=!toggle">切换</button>-->
     <!--    <div>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+
     <!--    <transition>-->
     <!--      <div class="test" v-if="toggle">我是动画</div>-->
     <!--    </transition>-->
+
     <!--    <transitions />-->
     <!--    可以用来多个组件切换-->
     <!--    <button @click="name='message'">切换message件</button>-->
@@ -68,7 +56,7 @@
     <!--    </div>-->
 
     <!--  组件点击事件要加native  -->
-        <test @click.native="onClick"/>
+    <test @click.native="onClick"/>
     <!--    <Video/>-->
     <!--    <zindex/>-->
 
@@ -80,7 +68,6 @@
 import transitions from './components/transition'
 import message from './components/message/index'
 import CheckDialog from './components/CheckDialog'
-import Slot from "./components/Slot/Slot";
 import Menu from './components/menu'
 import slide from './components/Slide'
 import Filter from './components/FilterDialog/index'
@@ -95,7 +82,6 @@ export default {
     // CheckDialog,
     // Filter,
     // message,
-    // Slot,
     // Menu,
     // slide,
     // lodash,
@@ -118,6 +104,7 @@ export default {
     this.$api.apronTest.getApron().then(res => {
       console.log(res)
     })
+
     /**
      * 深层 扁平化数组
      *  @param {Array} arr 要被“抹平”的数组
