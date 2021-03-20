@@ -89,7 +89,6 @@ import ReferenceDetail from './components/ReferenceDetails'
 import transitions from './components/transition'
 import Flv from "./flv/Flv";
 import message from './components/message/index'
-// import SlotTest from "./views/SlotTest";
 import Table from "./views/Table";
 import Table1 from "./views/Table1";
 import TipDialog from "./components/TipDialog/TipDialog";

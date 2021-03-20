@@ -66,7 +66,7 @@
   };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
   #emergency-plan {
     /*@import '../../../styles/common.scss';*/
     width: 300px;
