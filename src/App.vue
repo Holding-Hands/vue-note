@@ -13,7 +13,7 @@
 
     <!--    <lodash />-->
 
-        <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>
+<!--        <div @contextmenu.prevent.shift="father" @keyup.f2="father" :style="{background: 'cyan'}" :class="['aaa']">aaa</div>-->
 
     <!--    <label>-->
     <!--      <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa"  ref="focus">-->
@@ -37,7 +37,7 @@
     <!--    </div>-->
 
     <!--  组件点击事件要加native  -->
-    <test @click.native="onClick"/>
+<!--    <test @click.native="onClick"/>-->
 
     <!--    <zindex/>-->
 
@@ -61,7 +61,7 @@ export default {
     // slide,
     // lodash,
     // transitions,
-    test,
+    // test,
     // zindex
   },
   data() {
