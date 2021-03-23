@@ -222,11 +222,11 @@ export default {
 <style scoped lang="less">
 .work {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
+  width: 750px;
+  height: 500px;
   background: #DEE1E6;
   // 居中
   position: absolute;
@@ -247,8 +247,8 @@ export default {
 
   .drag-item {
     border: 1px black dashed;
-    width: 190px;
-    height: 190px;
+    width: 224px;
+    height: 229px;
     cursor: pointer;
   }
 }
@@ -262,7 +262,7 @@ export default {
 .grid-6 {
   background: #DEE1E6;
   width: 600px;
-  height: 600px;
+  height: 531px;
   // 居中
   position: absolute;
   margin: auto;
@@ -276,17 +276,17 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 406px;
+  height: 224px;
 }
 .drag {
   border: 1px black dashed;
-  width: 100px;
-  height: 100px;
+  width: 176px;
+  height: 150px;
   cursor: pointer;
 }
 .drag-1 {
-  width: 343px;
-  height: 343px;
+  width: 387px;
+  height: 339px;
 }
 .drag-2 {
   height: 340px;
