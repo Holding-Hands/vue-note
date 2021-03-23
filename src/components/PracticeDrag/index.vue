@@ -355,7 +355,7 @@ export default {
           this.sixGridInstance.destroy()
         }
         if (this.fourGridInstance) {
-          this.sixGridInstance.destroy();
+          this.fourGridInstance.destroy();
         }
       }
     },
