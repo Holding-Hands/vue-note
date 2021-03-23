@@ -276,7 +276,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 193px;
+  height: 406px;
 }
 .drag {
   border: 1px black dashed;
