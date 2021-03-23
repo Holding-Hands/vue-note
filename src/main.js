@@ -6,9 +6,13 @@ import store from './store'
 import api from './api'
 
 Vue.prototype.$api = api
-console.log(App)
 import flvjs from 'flv.js'
 Vue.use(flvjs)
+
+// 拖拽的插件 使用v-drag就可以拖拽
+import vueDrag from 'vue-dragging'
+Vue.use(vueDrag)
+
 Vue.config.productionTip = false
 import axios from 'axios'
 Vue.prototype.$axios = axios
