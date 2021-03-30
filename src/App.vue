@@ -41,6 +41,8 @@
 
     <!--    <zindex/>-->
 
+    <router-link to="/home">home</router-link>
+    <router-link to="/home/aaa" exact>home</router-link>
     <router-view/>
   </div>
 </template>
@@ -192,5 +194,8 @@ export default {
 
 .transition {
   min-height: 100px;
+}
+.router-link-active {
+  color: red;
 }
 </style>
