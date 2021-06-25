@@ -17,23 +17,6 @@ import Sortable from "sortablejs";
 export default {
   name: "index",
   mounted() {
-    console.log(this.$router)
-    // this.$router.push({ path: '/aaa', query: { name: 111 } }).then(a => {
-    //   console.log(a)
-    //   console.log(this.$route)
-    //   throw 1
-    // }).catch(onAbort => {
-    //   console.log(onAbort)
-    // })
-
-    console.log(this.$route)
-    // this.$router.push({ name: 'Accordion', params: { name: 111 } }).then(a => {
-    //   console.log(a)
-    //   console.log(this.$route)
-    //   throw 1
-    // }).catch(onAbort => {
-    //   console.log(onAbort)
-    // })
     const el = this.$refs.container;
     this.sixBigGridInstanceOne = new Sortable(el, {
       group: "shared",  // or { name: "...", pull: [true, false, 'clone', array], put: [true, false, array] }

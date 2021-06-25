@@ -37,17 +37,26 @@
     <!--    </div>-->
 
     <!--  组件点击事件要加native  -->
-<!--    <test @click.native="onClick"/>-->
+    <test v-bind:title.sync="title" @handlePrint="handlePrint"/>
 
+    <ul>
+      <li v-for="(item, index) in arr" :key="index" >
+        <input type="checkbox"> {{item}}
+        <button @click="arr.splice(index, 1)">删除</button>
+      </li>
+    </ul>
     <!--    <zindex/>-->
 
-    <router-link to="/home">home</router-link>
-    <router-link to="/home/aaa" exact>home</router-link>
+<!--    <router-link to="/GridDrag/111">home</router-link>-->
+<!--    <button @click="handleClickBtn">home</button>-->
+    {{ obj.title }}
+    <VModel v-model="title" @on-change="onChange"></VModel>
     <router-view/>
   </div>
 </template>
 
 <script>
+import VModel from './components/VModel'
 import transitions from './components/transition'
 import message from './components/message/index'
 import Menu from './components/menu'
@@ -63,16 +72,42 @@ export default {
     // slide,
     // lodash,
     // transitions,
-    // test,
+    test,
+    VModel
     // zindex
+  },
+  mounted() {
+    setTimeout(() => {
+      this.title = '1111'
+    }, 2000)
   },
   data() {
     return {
+      arr: [1,2,3,4,5],
+      title: '这是一个title',
+      obj: {
+        title: 'lalal',
+        name: 'zcy'
+      },
       toggle: false,
       name: 'message'
     }
   },
   methods: {
+    onChange (data) {
+      console.log(data, 'data')
+    },
+    handlePrint() {
+      console.log(this.obj)
+      console.log('父组件的handlePrint');
+    },
+    handleClickBtn (){
+      this.$router.push({
+        path: '/GridDrag/111'
+      },((a) => {
+        // console.log(a)
+      }))
+    },
     fConfirm() {
       console.log('confirm')
     },
@@ -93,10 +128,6 @@ export default {
     },
     aaa() {
       console.log(11)
-    },
-    onClick() {
-      this.$router.push('/Video')
-      console.log('调用了父组件方法');
     }
   },
   // 自定义修饰符
@@ -136,7 +167,7 @@ export default {
 /*  width: 100px;*/
 /*  height: 100px;*/
 /*}*/
-.aaa {
+  .aaa {
   color: #67C23A !important;
 }
 
