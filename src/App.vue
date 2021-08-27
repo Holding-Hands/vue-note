@@ -50,7 +50,8 @@
 <!--    <router-link to="/GridDrag/111">home</router-link>-->
 <!--    <button @click="handleClickBtn">home</button>-->
     {{ obj.title }}
-    <VModel v-model="title" @on-change="onChange"></VModel>
+    <VModel :value.sync="title"></VModel>
+    <VModel v-model="title"></VModel>
     <router-view/>
   </div>
 </template>
@@ -94,9 +95,6 @@ export default {
     }
   },
   methods: {
-    onChange (data) {
-      console.log(data, 'data')
-    },
     handlePrint() {
       console.log(this.obj)
       console.log('父组件的handlePrint');

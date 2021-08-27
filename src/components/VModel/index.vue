@@ -1,8 +1,9 @@
 <template>
   <div>
     <input type="text" :value="value" @input="handleInput">
+<!--    <input type="text" v-model="valueCopy">-->
     <div class="box"></div>
-    <div class="mixin-class1"> </div>
+    <div class="mixin-class1"></div>
   </div>
 </template>
 
@@ -13,11 +14,28 @@ export default {
     value: {
       default: '',
       type: [Number, String]
+    },
+    title: {
+      type: String
+    }
+  },
+  created() {
+    console.log(this.value)
+  },
+  computed: {
+    valueCopy: {
+      set (value) {
+        console.log(value)
+        this.$emit('update:value',value)
+      },
+      get ({ value }) {
+        return value
+      }
     }
   },
   methods: {
     handleInput (e) {
-      this.$emit('input', e.target.value);
+      this.$emit('update:modelValue', e.target.value);
     }
   }
 }
