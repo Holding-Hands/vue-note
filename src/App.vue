@@ -36,23 +36,28 @@
     <!--      </transition>-->
     <!--    </div>-->
 
-    <!--  组件点击事件要加native  -->
-    <test v-bind:title.sync="title" @handlePrint="handlePrint"/>
+<!--    &lt;!&ndash;  组件点击事件要加native  &ndash;&gt;-->
+<!--    <test v-bind:title.sync="title" @handlePrint="handlePrint"/>-->
 
-    <ul>
-      <li v-for="(item, index) in arr" :key="index" >
-        <input type="checkbox"> {{item}}
-        <button @click="arr.splice(index, 1)">删除</button>
-      </li>
-    </ul>
-    <!--    <zindex/>-->
+<!--    <ul>-->
+<!--      <li v-for="(item, index) in arr" :key="index" >-->
+<!--        <input type="checkbox"> {{item}}-->
+<!--        <button @click="arr.splice(index, 1)">删除</button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--    &lt;!&ndash;    <zindex/>&ndash;&gt;-->
 
-<!--    <router-link to="/GridDrag/111">home</router-link>-->
-<!--    <button @click="handleClickBtn">home</button>-->
-    {{ obj.title }}
-    <VModel :value.sync="title"></VModel>
-    <VModel v-model="title"></VModel>
-    <router-view/>
+<!--&lt;!&ndash;    <router-link to="/GridDrag/111">home</router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button @click="handleClickBtn">home</button>&ndash;&gt;-->
+<!--    {{ obj.title }}-->
+<!--    <VModel :value.sync="title"></VModel>-->
+<!--    <VModel v-model="title"></VModel>-->
+<!--    <router-view/>-->
+<!--    <Accordion/>-->
+<!--    <PDFPreview/>-->
+<!--    <TreeSelect/>-->
+<!--    <Upload/>-->
+    <Select/>
   </div>
 </template>
 
@@ -65,7 +70,11 @@ import slide from './components/Slide'
 import lodash from './components/lodash'
 import test from './components/test'
 import zindex from "./components/ZIndex/zindex";
-
+import Accordion from './components/Accordion'
+import PDFPreview from './components/PDFPreview'
+import TreeSelect from './components/TreeSelect'
+// import Upload from "./components/Upload";
+import Select from "@/components/Select/index.vue";
 export default {
   components: {
     // message,
@@ -73,9 +82,14 @@ export default {
     // slide,
     // lodash,
     // transitions,
-    test,
-    VModel
+    // test,
+    // VModel,
+    // Accordion
     // zindex
+    // PDFPreview,
+    // TreeSelect,
+    // Upload,
+    Select
   },
   mounted() {
     setTimeout(() => {
@@ -154,7 +168,7 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
 #main {
   overflow: hidden;
 }
@@ -226,5 +240,11 @@ export default {
 }
 .router-link-active {
   color: red;
+}
+::v-deep .el-select {
+  $num1: 3;
+  .el-tag.el-tag--info:nth-child(n + 3) {
+    display: none!important;
+  }
 }
 </style>

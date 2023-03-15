@@ -60,6 +60,14 @@ module.exports = {
           '/api': ''
         },
         changeOrigin: true
+      },
+      '/file': {
+        target: 'http://wgms.dev.fpi-inc.site',
+        logLevel: 'debug',
+        pathRewrite: {
+          '/file': ''
+        },
+        changeOrigin: true
       }
     }
   }

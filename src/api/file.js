@@ -40,15 +40,14 @@ export function error(err) {
   return Promise.reject(err);
 }
 
-const http = axios.create({
-  baseURL: process.env.VUE_APP_API,
-  headers: { 'Content-type': 'application/json' },
-  responseType: 'blob'
+const file = axios.create({
+  baseURL: process.env.VUE_APP_File,
+  headers: { 'Content-type': 'application/json' }
 });
 
-// http请求response拦截器（预处理返回值）
-http.interceptors.response.use(success, error);
-http.interceptors.request.use(
+// file请求response拦截器（预处理返回值）
+file.interceptors.response.use(success, error);
+file.interceptors.request.use(
   async (config) => {
     if (config.method === 'get') {
       config.paramsSerializer = function (params) {
@@ -59,5 +58,4 @@ http.interceptors.request.use(
   },
   errorSelf => Promise.reject(errorSelf)
 );
-
-export default http;
+export default file;

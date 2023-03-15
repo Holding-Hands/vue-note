@@ -1,5 +1,14 @@
 import http from "@/api/apron";
+import file from "@/api/file";
 
-export const getApron = params => http.get('/piclog/_search')
+const getApron = params => http.get('/piclog/_search')
 
-export const getsupplementaryList = params => http.get('/settle/processSystem/')
+const getsupplementaryList = params => http.get('/settle/processSystem/')
+
+const downloadFile = fileId => file.get(`/file-base-server/api/v1/sys/download/${fileId}`)
+
+export default {
+  getsupplementaryList,
+  getApron,
+  downloadFile
+}

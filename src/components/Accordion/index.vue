@@ -78,16 +78,17 @@
     position: fixed;
     /*right: 500px;*/
     /*left: 330px;*/
-    /*top: 330px;*/
-    bottom: 330px;
+    left: 330px;
+    /*bottom: 330px;*/
   }
   /* 默认样式 */
   .no-active {
-    width: 0;
-    height: 0;
+    /*width: 0;*/
+    /*height: 0;*/
     opacity: 0;
-    background: transparent;
+    /*background: transparent;*/
     position: fixed;
-    right: 500px;
+    /*right: 500px;*/
+    /*left: 330px;*/
   }
 </style>

@@ -6,6 +6,7 @@ import './style/common.less'
 
 import api from './api'
 
+console.log(App, 'App')
 Vue.prototype.$api = api
 import flvjs from 'flv.js'
 Vue.use(flvjs)
@@ -13,6 +14,8 @@ Vue.use(flvjs)
 // 拖拽的插件 使用v-drag就可以拖拽
 import vueDrag from 'vue-dragging'
 Vue.use(vueDrag)
+import ElTreeSelect from 'el-tree-select';
+Vue.use(ElTreeSelect);
 
 Vue.config.productionTip = false
 import axios from 'axios'
@@ -27,7 +30,6 @@ import Dialog from "./components/Dialogs";
 Vue.use(Dialog);
 import _ from 'lodash'
 
-console.log(App)
 // App 是一个对象 并且没有 template 内部已经解析了render函数了 所以 不再有template -> ast -> render这个步骤了
 // .vue中的template 哪去了 是因为之前安装的一个插件 vue-template-compiler 已经解析了
 // 这就是为什么使用 runtime-only 不使用 runtime compiler
