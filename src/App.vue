@@ -21,19 +21,18 @@
 
     <!--    <button @click="toggle=!toggle">切换</button>-->
 
-    <!--    <transition>-->
+    <!--    <Transition>-->
     <!--      <div class="test" v-if="toggle">我是动画</div>-->
-    <!--    </transition>-->
+    <!--    </Transition>-->
 
-    <!--    <transitions />-->
     <!--    可以用来多个组件切换-->
     <!--    <button @click="name='message'">切换message件</button>-->
     <!--    <button @click="name='Table'">切换Table组件</button>-->
     <!--    &lt;!&ndash; 组件切换的动画 &ndash;&gt;-->
-    <!--    <div class="transition">-->
-    <!--      <transition appear name="move">-->
+    <!--    <div class="Transition">-->
+    <!--      <Transition appear name="move">-->
     <!--        <component :is="name"></component>-->
-    <!--      </transition>-->
+    <!--      </Transition>-->
     <!--    </div>-->
 
 <!--    &lt;!&ndash;  组件点击事件要加native  &ndash;&gt;-->
@@ -47,49 +46,38 @@
 <!--    </ul>-->
 <!--    &lt;!&ndash;    <zindex/>&ndash;&gt;-->
 
-<!--&lt;!&ndash;    <router-link to="/GridDrag/111">home</router-link>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button @click="handleClickBtn">home</button>&ndash;&gt;-->
 <!--    {{ obj.title }}-->
 <!--    <VModel :value.sync="title"></VModel>-->
 <!--    <VModel v-model="title"></VModel>-->
-<!--    <router-view/>-->
-<!--    <Accordion/>-->
-<!--    <PDFPreview/>-->
 <!--    <TreeSelect/>-->
 <!--    <Upload/>-->
-    <Select/>
+    <Menu/>
+    <router-view/>
   </div>
 </template>
 
 <script>
+import Menu from './components/Menu.vue'
 import VModel from './components/VModel'
-import transitions from './components/transition'
 import message from './components/message/index'
-import Menu from './components/menu'
 import slide from './components/Slide'
 import lodash from './components/lodash'
 import test from './components/test'
 import zindex from "./components/ZIndex/zindex";
-import Accordion from './components/Accordion'
-import PDFPreview from './components/PDFPreview'
 import TreeSelect from './components/TreeSelect'
 // import Upload from "./components/Upload";
-import Select from "@/components/Select/index.vue";
 export default {
   components: {
     // message,
     // Menu,
     // slide,
     // lodash,
-    // transitions,
     // test,
     // VModel,
-    // Accordion
     // zindex
-    // PDFPreview,
     // TreeSelect,
     // Upload,
-    Select
+    Menu
   },
   mounted() {
     setTimeout(() => {
@@ -105,20 +93,13 @@ export default {
         name: 'zcy'
       },
       toggle: false,
-      name: 'message'
+      name: 'message',
     }
   },
   methods: {
     handlePrint() {
       console.log(this.obj)
       console.log('父组件的handlePrint');
-    },
-    handleClickBtn (){
-      this.$router.push({
-        path: '/GridDrag/111'
-      },((a) => {
-        // console.log(a)
-      }))
     },
     fConfirm() {
       console.log('confirm')
@@ -184,18 +165,18 @@ export default {
 }
 
 /*
- <transition
+ <Transition
     enter-active-class="animated fadeInDown"
     leave-active-class="animated fadeOutUp"
     :duration='400'> // 入场400ms，离场400ms :duration='{leave:300,enter:400}'
   <div v-if="toggle">包裹动画元素</div>
-</transition>
+</Transition>
 **另一种写法**
-<transition
+<Transition
       enter-active-class="fadeInDown"
       leave-active-class="fadeOutUp">
     <div v-if="toggle" class="animated">包裹动画元素</div>
-  </transition>
+  </Transition>
 */
 .v-enter,
 .v-leave-to {

@@ -12,6 +12,10 @@
 <script>
 let span
 export default {
+  // functional: true,
+  // render(h) {
+  //   return h('div', { class: 'aaa' }, [11111])
+  // },
   data() {
     return {
       value: ''
@@ -114,16 +118,10 @@ export default {
   border-radius: 4px;
   margin-left: 6px;
 }
-:root {
-  --num: "3";
-}
 .el-select {
   $num1: 4;
   .el-tag.el-tag--info:nth-child(n + #{$num1}) {
     display: none;
   }
-  //@for $i from 1 through $num1 {
-  //
-  //}
 }
 </style>

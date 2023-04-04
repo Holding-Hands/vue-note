@@ -5,7 +5,6 @@
       <div class="item">2</div>
       <div class="item">3</div>
       <div class="item">4</div>
-      <div class="zanwei">占位</div>
       <div class="item big-item item-5">5</div>
       <div class="item big-item item-6">6</div>
       <div class="item big-item item-7">7</div>
@@ -18,7 +17,6 @@
     <!--        <div class="big-item item-7">7</div>-->
     <!--      </div>-->
     <!--    </div>-->
-    <div>122uqjwdnsdjk</div>
   </div>
 </template>
 
