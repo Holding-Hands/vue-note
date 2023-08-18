@@ -6,7 +6,6 @@ import './style/common.less'
 
 import api from './api'
 
-console.log(App, 'App')
 Vue.prototype.$api = api
 import flvjs from 'flv.js'
 Vue.use(flvjs)
@@ -21,14 +20,14 @@ Vue.config.productionTip = false
 import axios from 'axios'
 Vue.prototype.$axios = axios
 
-// import _ from 'lodash'
+import _ from 'lodash'
+Vue.prototype.$lodash = _
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 import Dialog from "./components/Dialogs";
 //安装toast
 Vue.use(Dialog);
-import _ from 'lodash'
 
 // App 是一个对象 并且没有 template 内部已经解析了render函数了 所以 不再有template -> ast -> render这个步骤了
 // .vue中的template 哪去了 是因为之前安装的一个插件 vue-template-compiler 已经解析了

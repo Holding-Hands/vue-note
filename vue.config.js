@@ -10,6 +10,19 @@ module.exports = {
   publicPath: './',
   // lintOnSave: "error",
   productionSourceMap: false,
+
+  chainWebpack: config => {
+    // 加入以下代码
+    config.module
+      .rule('worker')
+      .test(/\.worker\.js$/)
+      .use('worker-loader')
+      .loader('worker-loader')
+      .options({
+        inline: true,
+        fallback: false
+      })
+  },
   configureWebpack: {
     devtool: 'source-map',
     externals: {
