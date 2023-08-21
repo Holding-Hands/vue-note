@@ -1,13 +1,9 @@
 <template>
   <div id="main">
-    <!--    <message />-->
-
-    <button @click="isShowDialog">点击开启弹框</button>
-
+        <message />
     <!--    <slide />-->
-    <!--    <Menu />-->
 
-    <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa">
+<!--    <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa">-->
 
     <!--    <button @click="toggle=!toggle">切换</button>-->
 
@@ -15,10 +11,8 @@
     <!--    <zindex/>-->
 
     <!--    {{ obj.title }}-->
-    <!--    <VModel :value.sync="title"></VModel>-->
-    <!--    <VModel v-model="title"></VModel>-->
     <!--    <TreeSelect/>-->
-    <Menu/>
+    <Menu style="margin-bottom: 20px;"/>
     <router-view/>
   </div>
 </template>
@@ -33,20 +27,22 @@ import TreeSelect from './components/TreeSelect'
 const path = require('path')
 export default {
   components: {
-    // message,
+    message,
     // Menu,
     // slide,
-    // VModel,
     // zindex
     // TreeSelect,
     Menu
   },
+  watch: {
+    title: (value) => {
+      console.log(value, 'value')
+    }
+  },
   mounted() {
-    setTimeout(() => {
-      this.title = '1111'
-      console.log(path.resolve(__dirname))
-      console.log(path, 'path')
-    }, 2000)
+    this.title = '1111'
+    console.log(path.resolve(__dirname))
+    console.log(path, 'path')
   },
   data() {
     return {
@@ -64,24 +60,6 @@ export default {
     handlePrint() {
       console.log(this.obj)
       console.log('父组件的handlePrint');
-    },
-    onConfirm() {
-      console.log('confirm')
-    },
-    onCancel() {
-      console.log(1);
-    },
-    isShowDialog() {
-      this.$dialog({
-        title: 'zcy',
-        footerContent: '我是footerContent'
-      })
-        .then(() => {
-          this.onConfirm();
-        })
-        .catch(() => {
-          this.onCancel();
-        })
     },
     aaa() {
       console.log(11)
@@ -116,30 +94,9 @@ export default {
 <style lang="scss">
 #main {
   overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
-
-/*.draggable {*/
-/*  background: #795da3;*/
-/*  color: white;*/
-/*  width: 100px;*/
-/*  height: 100px;*/
-/*}*/
-
-
-/*
- <Transition
-    enter-active-class="animated fadeInDown"
-    leave-active-class="animated fadeOutUp"
-    :duration='400'> // 入场400ms，离场400ms :duration='{leave:300,enter:400}'
-  <div v-if="toggle">包裹动画元素</div>
-</Transition>
-**另一种写法**
-<Transition
-      enter-active-class="fadeInDown"
-      leave-active-class="fadeOutUp">
-    <div v-if="toggle" class="animated">包裹动画元素</div>
-  </Transition>
-*/
 .v-enter,
 .v-leave-to {
   opacity: 0;

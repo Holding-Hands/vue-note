@@ -1,3 +1,5 @@
+import CheckDialog from "@/components/Dialogs/CheckDialog.vue";
+
 export const routes = [
   {
     hidden: false,
@@ -14,6 +16,14 @@ export const routes = [
       {
         path: '/Transition',
         name: 'Transition动画',
+      },
+      {
+        path: '/VModel',
+        name: 'VModel原理',
+      },
+      {
+        path: '/CheckDialog',
+        name: 'CheckDialog',
       },
     ],
   },
@@ -51,6 +61,10 @@ export const routes = [
       },
       {
         path: '/Upload',
+        name: '上传下载原理',
+      },
+      {
+        path: '/dialog',
         name: '上传下载原理',
       },
     ]

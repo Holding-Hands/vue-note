@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: "index",
+    name: "Transition",
     data() {
       return {
         id: '',
@@ -46,7 +46,7 @@
           }
         })
       }
-    }
+    },
   }
 </script>
 

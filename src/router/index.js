@@ -8,12 +8,16 @@ import PDFPreview from '../components/PDFPreview'
 import Sortable from '../components/Sortable'
 import Draggable from '../components/Draggable'
 import Transition from '../components/Transition'
+import VModel from "@/components/VModel/index.vue";
+import CheckDialog from "@/components/Dialogs/CheckDialog.vue";
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/Slot', name: 'Slot', component: Slot }, // 插槽笔记
   { path: '/Transition', name: 'Draggable', component: Transition }, // vue动画
+  { path: '/VModel', name: 'VModel', component: VModel }, // vue动画
+  { path: '/CheckDialog', name: 'CheckDialog', component: CheckDialog }, // vue动画
 
   { path: '/Accordion', name: 'Accordion', component: Accordion }, // 手风琴笔记
   { path: '/Flv', name: 'Flv', component: Flv }, // Flv使用

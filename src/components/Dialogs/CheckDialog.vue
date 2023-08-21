@@ -1,26 +1,29 @@
 <!--插件形式的返回promise，通过点击confirm和cancel调用catch和then的方法进行封装-->
 <template>
-  <div id="check-dialog" v-show="toggle">
-    <div class="title">
-      <div>
-        <slot name="title">{{title}}</slot>
-      </div>
-    </div>
-    <div class="content">
-      <div>
-        <div class="header-content" v-show="isShowHeaderContent">
-          <span>{{headerContent}}</span>
-        </div>
-        <div class="footer-content" v-show="isShowFooterContent">
-          <i class="iconfont icontishi"></i>
-          <span>{{footerContent}}</span>
+  <div>
+    <div id="check-dialog" v-show="toggle">
+      <div class="title">
+        <div>
+          <slot name="title">{{title}}</slot>
         </div>
       </div>
+      <div class="content">
+        <div>
+          <div class="header-content" v-show="isShowHeaderContent">
+            <span>{{headerContent}}</span>
+          </div>
+          <div class="footer-content" v-show="isShowFooterContent">
+            <i class="iconfont icontishi"></i>
+            <span>{{footerContent}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer" @click="onClickIsShowDialog">
+        <el-button class="cancel" @click="onHandle('reject')">返回</el-button>
+        <el-button class="confirm" @click="onHandle('resolve')">确定</el-button>
+      </div>
     </div>
-    <div class="footer" @click="onClickIsShowDialog">
-      <el-button type="small" class="cancel" @click="onHandle('reject')">返回</el-button>
-      <el-button type="small" class="confirm" @click="onHandle('resolve')">确定</el-button>
-    </div>
+    <button @click="onClick">点击开启弹框</button>
   </div>
 </template>
 
@@ -66,7 +69,26 @@
           this.resolve = resolve;
           this.reject = reject;
         })
-      }
+      },
+      onClick() {
+        this.$dialog({
+          title: 'zcy',
+          footerContent: '我是footerContent'
+        })
+          .then(() => {
+            this.onConfirm();
+          })
+          .catch(() => {
+            this.onCancel();
+          })
+      },
+
+      onConfirm() {
+        console.log('confirm')
+      },
+      onCancel() {
+        console.log(1);
+      },
     }
   }
 </script>
