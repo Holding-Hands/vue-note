@@ -25,6 +25,18 @@ export const routes = [
         path: '/CheckDialog',
         name: 'CheckDialog',
       },
+      {
+        path: '/zindex',
+        name: 'zindex',
+      },
+      {
+        path: '/slide',
+        name: 'slide',
+      },
+      {
+        path: '/TreeSelect',
+        name: 'TreeSelect',
+      },
     ],
   },
   {
@@ -65,7 +77,7 @@ export const routes = [
       },
       {
         path: '/dialog',
-        name: '上传下载原理',
+        name: 'dialog利用promise原理',
       },
     ]
   },

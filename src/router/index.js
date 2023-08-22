@@ -10,14 +10,19 @@ import Draggable from '../components/Draggable'
 import Transition from '../components/Transition'
 import VModel from "@/components/VModel/index.vue";
 import CheckDialog from "@/components/Dialogs/CheckDialog.vue";
-
+import zindex from "@/components/ZIndex/zindex";
+import slide from '@/components/Slide'
+import TreeSelect from '@/components/TreeSelect'
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/Slot', name: 'Slot', component: Slot }, // 插槽笔记
   { path: '/Transition', name: 'Draggable', component: Transition }, // vue动画
-  { path: '/VModel', name: 'VModel', component: VModel }, // vue动画
+  { path: '/VModel', name: 'VModel', component: VModel }, // 双向绑定原理
   { path: '/CheckDialog', name: 'CheckDialog', component: CheckDialog }, // vue动画
+  { path: '/zindex', name: 'zindex', component: zindex }, // 层级关系
+  { path: '/slide', name: 'slide', component: slide }, // 显示隐藏滑动动画
+  { path: '/TreeSelect', name: 'TreeSelect', component: TreeSelect }, // vue动画
 
   { path: '/Accordion', name: 'Accordion', component: Accordion }, // 手风琴笔记
   { path: '/Flv', name: 'Flv', component: Flv }, // Flv使用

@@ -1,17 +1,9 @@
 <template>
   <div id="main">
         <message />
-    <!--    <slide />-->
 
-<!--    <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa">-->
+    <input type="text" autofocus v-focus="'cyan'" @keyup.f2="aaa">
 
-    <!--    <button @click="toggle=!toggle">切换</button>-->
-
-    <!--  组件点击事件要加native  -->
-    <!--    <zindex/>-->
-
-    <!--    {{ obj.title }}-->
-    <!--    <TreeSelect/>-->
     <Menu style="margin-bottom: 20px;"/>
     <router-view/>
   </div>
@@ -19,40 +11,23 @@
 
 <script>
 import Menu from './components/Menu.vue'
-import VModel from './components/VModel'
 import message from './components/message/index'
-import slide from './components/Slide'
-import zindex from "./components/ZIndex/zindex";
-import TreeSelect from './components/TreeSelect'
 const path = require('path')
 export default {
   components: {
     message,
-    // Menu,
-    // slide,
-    // zindex
-    // TreeSelect,
     Menu
   },
-  watch: {
-    title: (value) => {
-      console.log(value, 'value')
-    }
-  },
   mounted() {
-    this.title = '1111'
     console.log(path.resolve(__dirname))
     console.log(path, 'path')
   },
   data() {
     return {
       arr: [1, 2, 3, 4, 5],
-      title: '这是一个title',
       obj: {
-        title: 'lalal',
         name: 'zcy'
       },
-      toggle: false,
       name: 'message',
     }
   },

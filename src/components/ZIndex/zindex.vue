@@ -9,11 +9,7 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: "zindex"
-  }
-</script>
+<script></script>
 
 <style scoped>
   .a {
