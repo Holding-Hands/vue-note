@@ -32,10 +32,6 @@ export default {
     }
   },
   methods: {
-    handlePrint() {
-      console.log(this.obj)
-      console.log('父组件的handlePrint');
-    },
     aaa() {
       console.log(11)
     }
