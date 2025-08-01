@@ -62,26 +62,6 @@ module.exports = {
           '^/test': ''
         },
       },
-      // video.js 测试视频连接
-      '/hls': {
-        target: 'http://avms.hx-test.tao.qdcares'
-      },
-      '/api': {
-        target: 'http://192.168.163.93:9200',
-        logLevel: 'debug',
-        pathRewrite: {
-          '/api': ''
-        },
-        changeOrigin: true
-      },
-      '/file': {
-        target: 'http://wgms.dev.fpi-inc.site',
-        logLevel: 'debug',
-        pathRewrite: {
-          '/file': ''
-        },
-        changeOrigin: true
-      }
     }
   }
 };

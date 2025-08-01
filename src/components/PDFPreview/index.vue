@@ -5,7 +5,7 @@
 
 <!--    <h1>Base64</h1>-->
 <!--    <vue-pdf-embed :source="source2" />-->
-    <pdf src="http://wgms.dev.fpi-inc.site/file-base-server/api/v1/sys/download/d07455bbb96e4afead8744e79795c8c9"></pdf>
+    <pdf src="http://www.baidu.com"></pdf>
   </div>
 </template>
 

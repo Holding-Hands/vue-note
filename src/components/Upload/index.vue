@@ -19,12 +19,12 @@ export default {
       pictures: [{
         fileId: "e5825d0631f04fe3a7a482e2d992905b",
         name: "black-odorous-water.png",
-        url: "http://wgms.dev.fpi-inc.site/file-base-server/api/v1/sys/download/e5825d0631f04fe3a7a482e2d992905b"
+        url: "http://"
       },
         [{
           fileId: "830b520657434414aa28472d83b4a163",
           name: "a.mp4",
-          url: "http://wgms.dev.fpi-inc.site/file-base-server/api/v1/sys/download/830b520657434414aa28472d83b4a163"
+          url: "http://"
         }]
       ]
     }
