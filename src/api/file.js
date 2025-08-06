@@ -1,7 +1,7 @@
-import axios from 'axios'; // axios
-import _ from 'lodash'; // lodash
-import qs from 'qs'; // qs
-import Vue from 'vue';// vue
+import Vue from "vue";
+import axios from "axios";
+import _ from "lodash";
+import qs from "qs";
 
 /*  拦截器
  *  请求成功 状态码 2xx返回内容示例
@@ -20,14 +20,17 @@ export function success(res) {
 }
 
 /* 拦截器
- * 请求出错 状态码4xx 5xx 或者 2xx但是执行success方法出错
+ * 请求出错 状态码4xx 5xx 或者 2xx但是执行success方法出错22
  */
 export function error(err) {
-  const status = _.get(err, 'response.status');
-  if ((status === 403 || status === 401) && (window.location.hash !== '#/login')) {
+  const status = _.get(err, "response.status");
+  if (
+    (status === 403 || status === 401) &&
+    window.location.hash !== "#/login"
+  ) {
     // 非 login 页面下
     // 状态码为 401 或 403 时，重定向至 login 页面
-    Vue.prototype.$message = null;// 清除message提示
+    Vue.prototype.$message = null; // 清除message提示11
 
     window.location.href = window.location.origin;
   }
@@ -36,20 +39,20 @@ export function error(err) {
 
 const file = axios.create({
   baseURL: process.env.VUE_APP_File,
-  headers: { 'Content-type': 'application/json' }
+  headers: { "Content-type": "application/json" },
 });
 
-// file请求response拦截器（预处理返回值）
+// file请求response拦截器（预处理返回值）2221
 file.interceptors.response.use(success, error);
 file.interceptors.request.use(
   async (config) => {
-    if (config.method === 'get') {
+    if (config.method === "get") {
       config.paramsSerializer = function (params) {
-        return qs.stringify(params, { arrayFormat: 'repeat' });
+        return qs.stringify(params, { arrayFormat: "repeat" });
       };
     }
     return config;
   },
-  errorSelf => Promise.reject(errorSelf)
+  (errorSelf) => Promise.reject(errorSelf)
 );
 export default file;
