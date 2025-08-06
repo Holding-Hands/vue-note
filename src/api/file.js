@@ -4,8 +4,7 @@ import qs from 'qs'; // qs
 import Vue from 'vue';// vue
 
 /*  拦截器
- *  请求成功 状态码 2xx
- *  返回内容示例
+ *  请求成功 状态码 2xx返回内容示例
  *  {
  *      status: 200,
  *      data: {
@@ -16,11 +15,6 @@ import Vue from 'vue';// vue
  */
 export function success(res) {
   if (res.status === 200) {
-    // 2020.08.11  删除 res.data.data 这层转换
-    // if (_.get(res, 'data.success')) {
-    //   console.log('data.success', res);
-    //   return res.data.data;
-    // }
     return res.data;
   }
 }

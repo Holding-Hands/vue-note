@@ -18,7 +18,6 @@ export default {
     pdf
   },
   async mounted() {
-    // const data = await this.$api.apronTest.downloadFile('298460b26e17470cab0d1dc3edce9152')
   },
   data() {
     return {
