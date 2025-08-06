@@ -1,8 +1,7 @@
-import _ from 'lodash';
+import _ from "lodash";
 /**
  * 根据 condition 作为判断条件，执行函数 fn
  *
- * @author zilong
  * @public
  *
  * @param {Boolean} condition
@@ -14,9 +13,7 @@ import _ from 'lodash';
  */
 export function vIf(condition, fn, context = null, ...args) {
   if (condition) {
-    return _.isFunction(fn)
-      ? (fn.apply(context, args) || true)
-      : false;
+    return _.isFunction(fn) ? fn.apply(context, args) || true : false;
   }
   return false;
 }
@@ -25,7 +22,6 @@ export function vIf(condition, fn, context = null, ...args) {
  * 根据 condition 作为判断条件:
  * condition 为 true 时，执行函数 ifFn
  * condition 为 false 时，执行函数 elseFn
- *
  * @param {Boolean} condition
  * @param {Function} ifFn
  * @param {Function} elseFn
@@ -36,8 +32,8 @@ export function vIf(condition, fn, context = null, ...args) {
  */
 export function vIfElse(condition, ifFn, elseFn, context = null, ...args) {
   return condition
-    ? (_.isFunction(ifFn) && ifFn.apply(context, args))
-    : (_.isFunction(elseFn) && elseFn.apply(context, args));
+    ? _.isFunction(ifFn) && ifFn.apply(context, args)
+    : _.isFunction(elseFn) && elseFn.apply(context, args);
 }
 
 /**
@@ -48,24 +44,20 @@ export function vIfElse(condition, ifFn, elseFn, context = null, ...args) {
  * @param {Boolean} condition
  * @param {*} p1
  * @param {*} p2
- *
- * @author zilong
+ 
  * @public
  */
 export function vOr(condition, p1, p2) {
   return condition ? p1 : p2;
 }
 
-
 /**
  * @eg _.get(opt.color, 'rgba(131, 45, 72,1)')    替换->   opt.color ? opt.color : 'rgba(131, 45, 72,1)'
- *
- * @author zilong
+
  * @public
  *
  * @param {*} p1
  * @param {*} p2
- *
  * @returns {*}
  */
 export function get(p1, p2) {
@@ -98,5 +90,5 @@ export default {
   get,
   vOr,
   vAnd,
-  vJSONParse
+  vJSONParse,
 };
